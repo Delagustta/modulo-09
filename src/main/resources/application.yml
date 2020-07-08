@@ -9,6 +9,9 @@ spring:
     hibernate:
       ddl-auto: validate
 
+  flyway:
+    enabled: true
+
 modulo09:
   github-token: 123456
   use-default-alguma-coisa: true
