@@ -1,17 +1,14 @@
+modulo09:
+  github-token: 123456
+  use-default-alguma-coisa: true
 spring:
   datasource:
     driver-class-name: org.postgresql.Driver
     url: jdbc:postgresql://localhost:5432/modulo-09
     username: postgres
     password: Jfih@d1994guh77
-
+  flyway:
+    enabled: false
   jpa:
     hibernate:
-      ddl-auto: validate
-
-  flyway:
-    enabled: true
-
-modulo09:
-  github-token: 123456
-  use-default-alguma-coisa: true
+      ddl-auto: create-drop

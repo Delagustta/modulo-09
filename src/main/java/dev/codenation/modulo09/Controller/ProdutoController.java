@@ -1,8 +1,8 @@
 package dev.codenation.modulo09.Controller;
 
-import dev.codenation.modulo09.config.Modulo09Config;
+import dev.codenation.modulo09.Service.ProdutoService;
+import dev.codenation.modulo09.entity.Produto;
 import lombok.AllArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -10,11 +10,12 @@ import org.springframework.web.bind.annotation.RestController;
 @AllArgsConstructor
 public class ProdutoController {
 
-    @Autowired
-    private final Modulo09Config config;
+    //private final Modulo09Config config;
+
+    private final ProdutoService service;
 
     @GetMapping("/config")
-    public String getConfig() {
-        return config.getGithubToken();
+    public Produto getNovoProduto() {
+        return service.save();
     }
 }
