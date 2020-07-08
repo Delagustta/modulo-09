@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import javax.transaction.Transactional;
+import java.util.Optional;
 
 @SpringBootTest
 public class ProdutoRepositoryTest {
@@ -18,13 +19,11 @@ public class ProdutoRepositoryTest {
 
     @Test
     @Transactional
-    public void whenSaveProduct() {
-        Produto produto = Produto.builder()
-                .descricao("banana")
-                .build();
+    public void quandoEncontraDescricao() {
 
-        Produto result = repository.save(produto);
+        Optional<Produto> result = repository.findById(1L);
 
-        MatcherAssert.assertThat(result.getId(), Matchers.is(55L));
+        MatcherAssert.assertThat(result.get().getDescricao(), Matchers.is("Peixe") );
     }
+
 }
