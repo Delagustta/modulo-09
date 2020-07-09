@@ -14,7 +14,7 @@ public class ProdutoController {
 
     private final ProdutoService service;
 
-    @GetMapping("/config")
+    @GetMapping("/produto")
     public Produto getNovoProduto() {
         return service.save();
     }
